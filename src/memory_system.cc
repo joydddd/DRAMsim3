@@ -31,6 +31,8 @@ int MemorySystem::GetBurstLength() const { return config_->BL; }
 
 int MemorySystem::GetQueueSize() const { return config_->trans_queue_size; }
 
+int MemorySystem::GetLinksNum() const { return config_->num_links; }
+
 void MemorySystem::RegisterCallbacks(
     std::function<void(uint64_t)> read_callback,
     std::function<void(uint64_t)> write_callback) {
