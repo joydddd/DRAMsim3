@@ -26,6 +26,7 @@ class MemorySystem {
     int GetQueueSize() const;
     void PrintStats() const;
     int GetLinksNum() const;
+    int GetBlockSize() const;
     void ResetStats();
 
     bool WillAcceptTransaction(uint64_t hex_addr, bool is_write) const;

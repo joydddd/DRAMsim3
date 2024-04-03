@@ -31,7 +31,9 @@ int MemorySystem::GetBurstLength() const { return config_->BL; }
 
 int MemorySystem::GetQueueSize() const { return config_->trans_queue_size; }
 
-int MemorySystem::GetLinksNum() const { return config_->num_links; }
+int MemorySystem::GetLinksNum() const { return config_->IsHMC() ? config_->num_links : 1; }
+
+int MemorySystem::GetBlockSize() const { return config_->IsHMC() ? config_->block_size : 64; } // blocksize in bytes
 
 void MemorySystem::RegisterCallbacks(
     std::function<void(uint64_t)> read_callback,
